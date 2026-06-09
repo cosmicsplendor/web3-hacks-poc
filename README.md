@@ -9,3 +9,6 @@ Transaction hash: 0xcbb117e0ce4264a917f096a82ddfdf2cb60b73967ceef8cca9acfa0270cd
 
 # Invoke Script that Executes Attack via Attack Contract
 > forge script script/AttackScript.s.sol:AttackScript --rpc-url https://ethereum-sepolia-rpc.publicnode.com --private-key 0x30f66b88db2a76835f4aca8738cbd5cec8c315d94a55113c29b33c360b14abf1 --broadcast --skip-simulation
+
+# One-Off Call that Executes Attack
+> cast send 0x9EEBd92f975Fe6e9015F4880039E30998d1446CF "attack()" --rpc-url https://ethereum-sepolia-rpc.publicnode.com --private-key 0x30f66b88db2a76835f4aca8738cbd5cec8c315d94a55113c29b33c360b14abf1
