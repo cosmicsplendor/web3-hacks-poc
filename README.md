@@ -13,8 +13,14 @@ Transaction hash: 0xcbb117e0ce4264a917f096a82ddfdf2cb60b73967ceef8cca9acfa0270cd
 # One-Off Call that Executes Attack
 > cast send 0x9EEBd92f975Fe6e9015F4880039E30998d1446CF "attack()" --rpc-url https://ethereum-sepolia-rpc.publicnode.com --private-key 0x30f66b88db2a76835f4aca8738cbd5cec8c315d94a55113c29b33c360b14abf1
 
+# One-Off Call with Params
+> cast send 0xd13c691bD72D43cCE77e9A3a0618b0F7171B1792 "unlock(bytes32)" 0x412076657279207374726f6e67207365637265742070617373776f7264203a29 --rpc-url $RPC_URL --private-key $PRIVATE_KEY
+
 # Payable Call that Executes Attack
-> cast send 0x52589e1e6309415C5272656565b6AC0758f54EFe "attack()" --value 0.01ether --rpc-url $RPC_URL --private-key $PRIVATE_KEY
+> cast send 0x33ab033195Cb0454562d964997F041e74cE6fD73 "attack()" --value 0.01ether --rpc-url $RPC_URL --private-key $PRIVATE_KEY
 
 # See Balance
 > cast balance 0x46F1fC1a4C79a254537803d8ba984E396408e0b3 --ether --rpc-url https://ethereum-sepolia-rpc.publicnode.com
+
+# See a Contract Storage Slot (Private/Public)
+> cast storage 0xd13c691bD72D43cCE77e9A3a0618b0F7171B1792 1 --rpc-url $RPC_URL
