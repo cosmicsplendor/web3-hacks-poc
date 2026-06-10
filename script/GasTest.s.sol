@@ -9,7 +9,7 @@ contract GasTest is Script {
     bytes8 key = bytes8(uint64(0x100004EFE));
     function run() public {
         address gateKeeper = 0x2232A159Dcee0a7739661408B60bd3b0C4304cdF;
-        address gasContract = 0xdFC9BcC5Ab27e8C9692864744F5473026E377bC5;
+        address gasContract = 0xDB8f21545dC25BcABbA55093d9C8A929Ce124B67;
         vm.startBroadcast();
         for (uint256 gas=100000; gas < 120000; gas++) {
             console.log("Trying with gas: ", gas);
@@ -24,3 +24,6 @@ contract GasTest is Script {
         vm.stopBroadcast();
     }
 }
+
+
+// key: 0x4410fb07ca084ab8

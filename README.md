@@ -1,5 +1,5 @@
 # Deploy Attack Contract
-> forge create src/AttackerContract.sol:AttackerContract --rpc-url https://ethereum-sepolia-rpc.publicnode.com --broadcast --private-key 0x30f66b88db2a76835f4aca8738cbd5cec8c315d94a55113c29b33c360b14abf1
+> forge create src/AttackerContract.sol:AttackerContract --rpc-url https://ethereum-sepolia-rpc.publicnode.com --broadcast --private-key $PRIVATE_KEY
 
 [⠊] Compiling...
 No files changed, compilation skipped
@@ -8,10 +8,10 @@ Deployed to: 0xF3F0ad7BA0053Fa439D927E85546d14285644F31
 Transaction hash: 0xcbb117e0ce4264a917f096a82ddfdf2cb60b73967ceef8cca9acfa0270cdf33b
 
 # Invoke Script that Executes Attack via Attack Contract
-> forge script script/AttackScript.s.sol:AttackScript --rpc-url https://ethereum-sepolia-rpc.publicnode.com --private-key 0x30f66b88db2a76835f4aca8738cbd5cec8c315d94a55113c29b33c360b14abf1 --broadcast --skip-simulation
+> forge script script/AttackScript.s.sol:AttackScript --rpc-url https://ethereum-sepolia-rpc.publicnode.com --private-key $PRIVATE_KEY --broadcast --skip-simulation
 
 # One-Off Call that Executes Attack
-> cast send 0x9EEBd92f975Fe6e9015F4880039E30998d1446CF "attack()" --rpc-url https://ethereum-sepolia-rpc.publicnode.com --private-key 0x30f66b88db2a76835f4aca8738cbd5cec8c315d94a55113c29b33c360b14abf1
+> cast send 0x9EEBd92f975Fe6e9015F4880039E30998d1446CF "attack()" --rpc-url https://ethereum-sepolia-rpc.publicnode.com --private-key $PRIVATE_KEY
 
 # One-Off Call with Params
 > cast send 0xd13c691bD72D43cCE77e9A3a0618b0F7171B1792 "unlock(bytes32)" 0x412076657279207374726f6e67207365637265742070617373776f7264203a29 --rpc-url $RPC_URL --private-key $PRIVATE_KEY

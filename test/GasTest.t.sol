@@ -27,7 +27,7 @@ contract GasTest is Test {
             0x52589e1e6309415C5272656565b6AC0758f54EFe,
             0x52589e1e6309415C5272656565b6AC0758f54EFe
         );
-        for (uint256 gas = 100000; gas < 101000; gas++) {
+        for (uint256 gas = 100000; gas < 110000; gas++) {
             (bool success, ) = address(gasContract).call{gas: gas}(
                 abi.encodeWithSignature("test(address,bytes8)", gateKeeper, key)
             );
