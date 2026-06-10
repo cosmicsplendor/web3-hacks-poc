@@ -24,3 +24,6 @@ Transaction hash: 0xcbb117e0ce4264a917f096a82ddfdf2cb60b73967ceef8cca9acfa0270cd
 
 # See a Contract Storage Slot (Private/Public)
 > cast storage 0xd13c691bD72D43cCE77e9A3a0618b0F7171B1792 1 --rpc-url $RPC_URL
+
+# Fork RPC
+> anvil --fork-url $RPC_URL

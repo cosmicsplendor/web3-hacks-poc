@@ -11,8 +11,7 @@ contract GasTest is Script {
         address gateKeeper = 0x2232A159Dcee0a7739661408B60bd3b0C4304cdF;
         address gasContract = 0xdFC9BcC5Ab27e8C9692864744F5473026E377bC5;
         vm.startBroadcast();
-        uint256  gas = 60000;
-        for (uint256 gas=60000; gas < 80000; gas++) {
+        for (uint256 gas=100000; gas < 120000; gas++) {
             console.log("Trying with gas: ", gas);
             (bool success,) = address(gasContract).call{gas: gas}(
                     abi.encodeWithSignature("test(address,bytes8)",gateKeeper, key)

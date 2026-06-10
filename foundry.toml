@@ -3,5 +3,5 @@ src = "src"
 script = "script"
 out = "out"
 libs = ["lib"]
-
+gas_limit = 99999999
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

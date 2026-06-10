@@ -29,6 +29,6 @@ contract GatekeeperOne {
 
 contract GasContract {
     function test(address addr, bytes8 key) public {
-        GatekeeperOne(addr).enter(key);
+        GatekeeperOne(addr).enter{gas: gasleft() - 200}(key);
     }
 }
