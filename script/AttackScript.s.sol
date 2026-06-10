@@ -10,8 +10,8 @@ contract AttackScript is Script {
         vm.startBroadcast();
         for (uint8 i = 0; i < 10; i++) {
             AttackerContract(AttackContractAddress).guessRightFlip();
-            vm.warp(block.timestamp + 15);
-            vm.roll(block.number + 1);
+            // vm.warp(block.timestamp + 15);
+            // vm.roll(block.number + 1);
             vm.sleep(15000);
         }
         vm.stopBroadcast();
