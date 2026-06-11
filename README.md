@@ -28,3 +28,7 @@ Transaction hash: 0xcbb117e0ce4264a917f096a82ddfdf2cb60b73967ceef8cca9acfa0270cd
 # Fork RPC
 > anvil --fork-url $RPC_URL
 
+# Deploy EVM Bytecode
+cast send --rpc-url $RPC_URL --private-key $PRIVATE_KEY --create 600a600c600039600a6000f3602a60005260206000f3
+PUSH1(0x0A) PUSH1(0x0C) PUSH1(0x00) CODECOPY() PUSH1(0x0A) PUSH1(0x00) RETURN() 602a60005260206000f3
+----------------------------------------------> PUSH1(0x2A) PUSH1(0x00) MSTORE() PUSH1(0x20) PUSH1(0x00) RETURN()
