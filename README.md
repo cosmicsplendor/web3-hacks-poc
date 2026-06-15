@@ -35,3 +35,6 @@ PUSH1(0x0A) PUSH1(0x0C) PUSH1(0x00) CODECOPY() PUSH1(0x0A) PUSH1(0x00) RETURN() 
 
 # Compute Deterministic Spawn Address
 cast compute-address <recovery_address> --nonce 1 --rpc-url $SEPOLIA_RPC
+
+# Get Wallet Address from Private Key
+cast wallet address --private-key $PRIVATE_KEY
